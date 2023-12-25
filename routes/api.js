@@ -18,6 +18,11 @@ router.get('/:date', (req, res) => {
     let date = new Date( userInpt.getTime() + Math.abs(userInpt.getTimezoneOffset()*60000))
     
     if(arr.includes('-')){
+        if(date == "Invalid Date"){
+            res.send({
+                error : "Invalid Date"
+            })
+        }
         res.send(
             {
             unix : date.getTime(),
