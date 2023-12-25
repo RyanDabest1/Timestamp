@@ -22,13 +22,17 @@ router.get('/:date', (req, res) => {
             res.send({
                 error : "Invalid Date"
             })
-        }
+        } else {
+
+        
         res.send(
             {
             unix : date.getTime(),
             utc :  date.toUTCString(),
         }
+    
         )
+    }
     } else {
     let unix = req.params.date;
     let date = new Date(parseInt(unix))
