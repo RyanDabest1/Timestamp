@@ -14,7 +14,7 @@ router.get('/', (req,res) => {
 
 router.get('/:date', (req, res) => {
     let userInpt = new Date(req.params.date)
-    let arr = req.params.time.split('')
+    let arr = req.params.date.split('')
     let date = new Date( userInpt.getTime() + Math.abs(userInpt.getTimezoneOffset()*60000))
     
     if(arr.includes('-')){
