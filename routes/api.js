@@ -19,7 +19,7 @@ router.get('/:time', (req, res) => {
     let date = new Date(parseInt(unix))
     console.log(unix)
         res.send({
-            unix : unix,
+            unix : date.getTime(),
             utc : date.toUTCString(),
         
         })
